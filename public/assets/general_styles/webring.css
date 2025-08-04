@@ -37,3 +37,9 @@
     font-size: small;
     text-align: center;
 }
+@media only screen and (max-width: 320px) {
+    .templateWebring {
+        width: 200px;
+        max-width: calc(100% - 20px);
+    }
+}
