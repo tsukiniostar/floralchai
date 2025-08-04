@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/general_styles/root.css">
+    <link rel="stylesheet" href="/assets/general_styles/scrollbar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LETTERS</title>
+    <style>
+        body {
+            background-color: seashell;
+            font-family: "SourceSerif4", 'Times New Roman', Times, serif;
+            color: var(--color-brown);
+        }
+        .snail {
+            max-width: calc(100% - 20px);
+            width: 300px;
+        }
+        a {
+            color: var(--color-brown);
+        }
+        a:hover {
+            background-color: var(--color-white);
+        }
+        h1, h2, ol {
+            text-shadow: -1px 0 var(--color-white), 0 1px var(--color-white), 1px 0 var(--color-white), 0 -1px var(--color-white);
+        }
+        h2 span {
+            font-size: 0.75rem;
+            font-weight: normal;
+        }
+        main {
+            display: flex;
+            justify-content: space-between;
+        }
+        .content {
+            text-align: left;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        @media only screen and (max-width: 800px) {
+            body {
+                background-color: seashell;
+            }
+            .snail {
+                width: 150px;
+            }
+            main {
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+ <main>
+ <div class="content">
+    <a href="/index.html">⟵ back to cottage</a>
+    <h1>The garden <span class="green">✿</span></h1>
+    <h2>Questions <span>(These questions are optional to answer)</span></h2>
+    <ol>
+        <li>Are you feeling well today?</li>
+        <li>What has been on your mind lately?</li>
+        <li>What is your favourite movie?</li>
+        <li>Your most favourite character?</li>
+        <li>Heart shaped butter cookie or matcha waffle?</li>
+    </ol>
+    <img class="snail" src="/assets/graphics/_ajisai_katatsumuri.png">
+ </div>
+ <div id="c_widget"></div>
+ </main>
+ <script src="/assets/scripts/comment-widget.js"></script>
+</body>
+</html>

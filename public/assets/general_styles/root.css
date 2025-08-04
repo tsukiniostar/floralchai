@@ -1,0 +1,168 @@
+:root {
+    --color-brown: #604E43;
+    --color-white: #fffefc;
+    --color-pink: #FCC5CC;
+    --color-green: #ADD548;
+    --color-orange: #FFA600;
+    --color-blue: #7ECBD3;
+}
+@font-face {
+    font-family: "SourceSerif4";
+    src: url(https://file.garden/ZTeNOnlIhS-zrdb1/fonts/SourceSerif4.ttf);
+}
+@font-face {
+    font-family: "Nunito";
+    src: url(https://file.garden/ZTeNOnlIhS-zrdb1/fonts/Nunito.ttf);
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 140%;
+}
+.base, .base-sidebg{
+    width: min(42rem, 100%);
+    padding: 1.2rem;
+}
+.base-sidebg {
+    position: fixed;
+    z-index: -999;
+    top: 0;
+    bottom: 0;
+}
+.base-sidebg {
+    background-color: #fffefc;
+    background-clip: padding-box;
+    border-right: 16px solid;
+    border-image: url("/assets/graphics/side-bg.png") 18 round;
+}
+.heading {
+    font-size: 2.5rem;
+    font-style: italic;
+    letter-spacing: 0.2rem;
+}
+.bold-big {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.paragraph {
+    font-size: 0.8rem;
+    text-align: justify;
+    line-height: 1.75rem;
+    word-spacing: 0.1rem;
+}
+.dropcap {
+    font-size: 4.6rem;
+    font-weight: bold;
+    float: left;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+} 
+.sub-head {
+    font-size: 1.75rem;
+    font-weight: lighter;
+    letter-spacing: 0.3rem;
+}
+.btn-nav {
+    font-size: 1.25rem;
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    text-decoration: underline dotted;
+    font-style: italic;
+    margin-left: 10px;
+    padding: 2px;
+}
+h2 {
+    letter-spacing: 0.1rem;
+}
+.navigation {
+    border-left: 5px solid var(--color-brown);
+    padding-left: 10px;
+    background-color: oldlace;
+}
+.current {
+    font-weight: bold;
+}
+hr.dashed {
+    border-top: 1px dashed var(--color-brown);
+}
+.outlink {
+    color: hotpink;
+}
+.outlink:after {
+    content: url("/assets/graphics/outlink2.png");
+    padding-left: 3px;
+    vertical-align: top;
+}
+.heart {
+    color: darkred;
+}
+.green {
+    color: var(--color-green);
+}
+.pink {
+    color: var(--color-pink);
+}
+.orange {
+    color: var(--color-orange);
+}
+.blue {
+    color: var(--color-blue);
+}
+.heart:hover {
+    background-color: darkred;
+}
+.green:hover {
+    background-color: var(--color-green);
+}
+.pink:hover {
+    background-color: var(--color-pink);
+}
+.orange:hover {
+    background-color: var(--color-orange);
+}
+.blue:hover {
+    background-color: var(--color-blue);
+}
+.green:hover, .orange:hover, .blue:hover, .pink:hover, .heart:hover {
+    color: var(--color-white);
+    font-style: normal;
+}
+@media only screen and (max-width: 960px) {
+    body {
+        background-color: var(--color-white);
+        background-image: none;
+    }
+}
+@media only screen and (max-width: 820px) {
+    html {
+        font-size: 125%;
+    }
+    .paragraph {
+        text-align: left;
+    }
+    .content-wrapper {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 105%;
+    }
+    .heading {
+        font-size: 1.75rem;
+    }
+    .sub-head {
+        font-size: 1.45rem;
+    }
+    .btn-nav {
+        font-size: 1.15rem;
+    }
+}
