@@ -1,1 +1,1 @@
-# neocities
+# Neocities
