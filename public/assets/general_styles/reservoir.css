@@ -1,0 +1,57 @@
+body {
+  background-image: url("../graphics/dot15.gif");
+}
+.column-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  padding: 0 4px;
+}
+.gallery {
+  flex: 32.5%;
+  max-width: 32.5%;
+  padding: 0 4px;
+}
+.gallery img {
+  vertical-align: middle;
+  margin-top: 8px;
+  width: 100%;
+  padding: 4px;
+  border: 1.5px dotted var(--color-black);
+  background-color: var(--color-white);
+}
+.gallery img:hover, .gallery img:focus {
+  scale: 1.5;
+}
+hr.divider {
+  border: none;
+  height: 35px; 
+  background-image: url('../graphics/divider.png'); 
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-size: contain;
+}
+@media only screen and (max-width: 800px) {
+  .column {
+    flex: 65%;
+    max-width: 65%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .column-gallery {
+    flex-direction: column;
+  }
+  .gallery {
+    flex: 1;
+    max-width: 100%;
+  }
+  .gallery img:hover, .gallery img:focus {
+    scale: 1.2;
+  }
+}

@@ -1,0 +1,121 @@
+body {
+  background-image: url("../graphics/dot18.gif");
+}
+hr.ribbon {
+  border: none;
+  height: 30px; 
+  background-image: url('../graphics/ribbon.gif'); 
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-size: contain;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 1.25rem;
+}
+.title a{
+  color: palevioletred;
+  text-decoration: underline;
+  font-size: 1.95rem;
+}
+.title a:hover {
+  font-style: italic;
+  text-decoration: none;
+}
+a.link {
+  color: cornflowerblue;
+  font-size: 1.15rem;
+}
+a.link:hover {
+  background-color: aliceblue;
+  text-decoration: underline;
+}
+article p {
+  margin-block: 0;
+}
+.char-entry {
+  border: 1px solid var(--color-black);
+  padding: 5px;
+  background-color: palevioletred;
+}
+.box-container {
+  border: 1px dashed var(--color-black);
+  padding: 10px;
+  display: flex;
+  gap: 15px;
+  align-items: start;
+  background-color: snow;
+}
+.flex-img img {
+  border: 1px solid var(--color-black);
+  width: 190px;
+}
+div.gallery {
+  border: 1px solid var(--color-black);
+  width: 220px;
+}
+div.gallery:hover {
+  border: 1px solid #777;
+}
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+div.name {
+  padding: 15px;
+  text-align: center;
+}
+a, div.name {
+  color: var(--color-black);
+  text-decoration: none;
+}
+a div.name::before {
+  content: '★ ';
+  color: darkred;
+}
+a div.name:hover {
+  color: #777;
+  text-decoration: underline;
+}
+.responsive {
+  display: flex;
+  gap: 6px;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media only screen and (max-width: 560px) {
+  .box-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  a.link {
+    font-size: 1rem;
+  }
+  .gallery {
+    width: 150px;
+  }
+  .gallery img {
+    height: max-content;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .responsive {
+    flex-direction: column;
+  }
+  .gallery {
+    max-width: 100%;
+    width: 100px;
+  }
+  .title a {
+    font-size: 1.25rem;
+  }
+  .flex-img img {
+    max-width: 100%;
+    width: 130px;
+  }
+}

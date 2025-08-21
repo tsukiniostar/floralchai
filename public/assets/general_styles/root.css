@@ -5,6 +5,7 @@
     --color-green: #ADD548;
     --color-orange: #FFA600;
     --color-blue: #7ECBD3;
+    --color-black: #000000;
 }
 @font-face {
     font-family: "SourceSerif4";
@@ -17,12 +18,18 @@
 html, body {
   height: 100%;
   margin: 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-black) var(--color-white);
 }
 * {
     box-sizing: border-box;
 }
 html {
     font-size: 140%;
+}
+body {
+    background-attachment: fixed;
+    color: var(--color-brown);
 }
 .base, .base-sidebg{
     width: min(42rem, 100%);
@@ -72,7 +79,7 @@ html {
 .btn-nav {
     font-size: 1.25rem;
     font-family: "Nunito", Arial, Helvetica, sans-serif;
-    text-decoration: underline dotted;
+    text-decoration: underline 3px dotted;
     font-style: italic;
     margin-left: 10px;
     padding: 2px;
@@ -84,6 +91,17 @@ h2 {
     border-left: 5px solid var(--color-brown);
     padding-left: 10px;
     background-color: oldlace;
+}
+hr {
+    border: 0;
+}
+hr.rose {
+    border: none;
+    height: 37px; 
+    background-image: url('/assets/graphics/rose-line.gif'); 
+    background-repeat: no-repeat; 
+    background-position: right;
+    background-size: contain;
 }
 .current {
     font-weight: bold;
@@ -132,6 +150,14 @@ hr.dashed {
 .green:hover, .orange:hover, .blue:hover, .pink:hover, .heart:hover {
     color: var(--color-white);
     font-style: normal;
+}
+.align-right {
+    text-align: right;
+}
+.align-center {
+    text-align: center;
+    display: block;
+    margin: auto;
 }
 @media only screen and (max-width: 960px) {
     body {

@@ -1,8 +1,6 @@
 body {
-    color: var(--color-brown);
     font-family: "SourceSerif4", 'Times New Roman', Times, serif;
     background-image: url("/assets/graphics/dot13.gif");
-    background-attachment: fixed;
 }
 .bushes {
     border: 10px solid;
@@ -43,7 +41,7 @@ body {
   z-index: 99;
   font-size: 1.75rem;
   color: #FFF;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, "Nunito", sans-serif;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   filter: none;
 }
@@ -58,14 +56,6 @@ a:hover {
     color: dodgerblue;
     font-style: italic;
 }
-hr.rose {
-    border: none;
-    height: 37px; 
-    background-image: url('/assets/graphics/rose-line.gif'); 
-    background-repeat: no-repeat; 
-    background-position: right;
-    background-size: contain;
-}
 .float-right {
     float: right;
     margin-left: 1rem;
@@ -73,14 +63,6 @@ hr.rose {
 .float-left {
     float: left;
     margin-right: 1rem;
-}
-.align-right {
-    text-align: right;
-}
-.align-center {
-    text-align: center;
-    display: block;
-    margin: auto;
 }
 .profile {
     max-width: 100%;
