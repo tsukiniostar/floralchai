@@ -1,0 +1,10 @@
+# IGNORE these WIP pages
+
+
+# NO IGNORING
+!robots.txt
+
+# IGNORE these files
+*.txt
+*.cur
+*.mp3

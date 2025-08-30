@@ -21,7 +21,7 @@ body {
   background-color: var(--color-white);
 }
 .gallery img:hover, .gallery img:focus {
-  scale: 1.5;
+  scale: 1.3;
 }
 hr.divider {
   border: none;
@@ -30,6 +30,15 @@ hr.divider {
   background-repeat: no-repeat; 
   background-position: center;
   background-size: contain;
+}
+a {
+  color: dodgerblue;
+  font-size: 1.15rem;
+}
+a:hover {
+  font-style: italic;
+  color: var(--color-white);
+  background-color: dodgerblue;
 }
 @media only screen and (max-width: 800px) {
   .column {
@@ -52,6 +61,6 @@ hr.divider {
     max-width: 100%;
   }
   .gallery img:hover, .gallery img:focus {
-    scale: 1.2;
+    scale: 1.15;
   }
 }

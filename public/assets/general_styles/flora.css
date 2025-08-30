@@ -16,7 +16,7 @@ hr.ribbon {
   font-size: 1.25rem;
 }
 .title a{
-  color: palevioletred;
+  color: var(--color-white);
   text-decoration: underline;
   font-size: 1.95rem;
 }
@@ -25,31 +25,32 @@ hr.ribbon {
   text-decoration: none;
 }
 a.link {
-  color: cornflowerblue;
+  color: hotpink;
   font-size: 1.15rem;
 }
 a.link:hover {
-  background-color: aliceblue;
+  background-color: lavenderblush;
   text-decoration: underline;
 }
 article p {
   margin-block: 0;
+  color: var(--color-white);
 }
 .char-entry {
-  border: 1px solid var(--color-black);
+  border: 1px solid var(--color-brown);
   padding: 5px;
   background-color: palevioletred;
 }
 .box-container {
-  border: 1px dashed var(--color-black);
+  border: 3px dotted var(--color-white);
   padding: 10px;
   display: flex;
   gap: 15px;
   align-items: start;
-  background-color: snow;
+  background-color: palevioletred;
 }
 .flex-img img {
-  border: 1px solid var(--color-black);
+  border: 1px solid var(--color-white);
   width: 190px;
 }
 div.gallery {

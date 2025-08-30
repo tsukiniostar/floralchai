@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/general_styles/scrollbar.css">
-    <link rel="stylesheet" href="/assets/general_styles/root.css">
+    <link rel="stylesheet" href="../../assets/general_styles/scrollbar.css">
+    <link rel="stylesheet" href="../../assets/general_styles/root.css">
     <title>OTHER</title>
     <style>
     html, body {
@@ -27,24 +27,27 @@
     .speech {
         font-size: 0.65rem;
         font-family: 'Nunito', Arial, Helvetica, sans-serif;
-        background-color: #fff;
+        background-color: var(--color-brown);
+        color: var(--color-white);
+        position: relative;
         padding: 5px;
-        border-radius: 5px;
+        border-radius: 10px;
         min-height: fit-content;
         width: 200px;
-        filter: drop-shadow(1px 1px #555) drop-shadow(1px -1px #555) drop-shadow(-1px 1px #555) drop-shadow(-1px -1px #555);
         text-align: center;
     }
     .speech::after {
+        content: '';
         position: absolute;
-        display: block;
+        left: 0;
+        top: 50%;
         width: 0;
-        content: "";
-        border: 8px solid transparent;
-        left: -8px;
-        top: calc(50% - 15px);
-        border-right-color: #fff;
+        height: 0;
+        border: 12px solid transparent;
+        border-right-color: var(--color-brown);
         border-left: 0;
+        margin-top: -16px;
+        margin-left: -9px;
     }
     .me {
         max-width: 100%;

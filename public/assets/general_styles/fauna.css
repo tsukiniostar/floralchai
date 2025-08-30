@@ -1,0 +1,44 @@
+body {
+    background-image: url("../graphics/dot01.gif");
+}
+hr.sunflower-line {
+  border: none;
+  height: 39px; 
+  background-image: url('../graphics/sunflower-line.gif'); 
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-size: contain;
+}
+a {
+  font-size: 1.15rem;
+  color: darkorange;
+  text-decoration: underline dashed 2px;
+}
+a:hover {
+  font-style: italic;
+  background-color: lightyellow;
+}
+.entry {
+  outline: 10px solid var(--color-pink);
+  border: 3px dotted var(--color-orange);
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+.title a {
+  font-size: 1.25rem;
+  text-decoration: underline dotted 3px;
+  color: darkorange;
+}
+.title a:hover {
+  font-style: italic;
+  color: var(--color-white);
+  background-color: darkorange;
+}
+@media only screen and (max-width: 480px) {
+  .entry {
+    flex-direction: column;
+  }
+}

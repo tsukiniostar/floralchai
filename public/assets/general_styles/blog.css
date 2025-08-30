@@ -1,0 +1,90 @@
+body {
+    background-color: var(--color-white);
+}
+main {
+    width: 60%;
+    margin: auto;
+    text-align: justify;
+}
+h1, h2, .date {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+h1 {
+    font-size: 1.5rem;
+}
+h2 {
+    font-size: 1.25rem;
+}
+.date {
+    font-size: 1rem;
+    font-weight: bold;
+    color: hotpink;
+}
+a {
+    color: cornflowerblue;
+}
+a:hover {
+    color: var(--color-white);
+    background-color: cornflowerblue;
+}
+.back {
+    color: hotpink;
+}
+.back:hover {
+    color: var(--color-white);
+}
+img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.imgcap {
+    opacity: 0.75;
+    font-size: smaller;
+    text-align: center;
+}
+blockquote {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    white-space: pre-wrap;
+    background-color: oldlace;
+    border-left: 8px solid var(--color-brown);
+    font-size: 0.8rem;
+}
+.code-block {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    background-color: var(--color-brown);
+    color: var(--color-white);
+    padding: 5px;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    font-size: 0.8rem;
+}
+.code-block pre {
+  margin: 0;
+  white-space: pre-wrap; /* Ensures long lines wrap */
+}
+.copy-button {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: oldlace;
+    color: var(--color-brown);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.65rem;
+}
+.copy-button:hover {
+  background-color: oldlace;
+}
+@media only screen and (max-width: 950px) {
+    main {
+        text-align: left;
+        width: 80%;
+    }
+}

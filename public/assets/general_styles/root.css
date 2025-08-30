@@ -9,17 +9,22 @@
 }
 @font-face {
     font-family: "SourceSerif4";
-    src: url(https://file.garden/ZTeNOnlIhS-zrdb1/fonts/SourceSerif4.ttf);
+    src: url("../fonts/SourceSerif4.ttf") format('truetype');
 }
 @font-face {
     font-family: "Nunito";
-    src: url(https://file.garden/ZTeNOnlIhS-zrdb1/fonts/Nunito.ttf);
+    src: url("../fonts/Nunito.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter.ttf") format('truetype');
 }
 html, body {
   height: 100%;
   margin: 0;
   scrollbar-width: thin;
   scrollbar-color: var(--color-black) var(--color-white);
+  scroll-behavior: smooth;
 }
 * {
     box-sizing: border-box;
