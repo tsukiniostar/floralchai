@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
           await navigator.clipboard.writeText(codeElement.textContent);
           // Optional: Provide visual feedback to the user (e.g., change button text)
-          button.textContent = 'Copied!';
+          button.textContent = 'Copied';
           setTimeout(() => {
-            button.textContent = `Copy ${targetId.includes('css') ? 'CSS' : 'HTML'}`;
+            button.textContent = '📋';
           }, 2000);
         } catch (err) {
           console.error('Failed to copy text: ', err);
