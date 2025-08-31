@@ -9,10 +9,13 @@ hr.sunflower-line {
   background-position: center;
   background-size: contain;
 }
+#nav {
+  padding-bottom: 6px;
+}
 a {
   font-size: 1.15rem;
   color: darkorange;
-  text-decoration: underline dashed 2px;
+  text-decoration: underline double;
 }
 a:hover {
   font-style: italic;
