@@ -1,5 +1,5 @@
-# IGNORE these WIP pages
-
+# IGNORE these pages
+/public/fauna/template.html
 
 # NO IGNORING
 !robots.txt

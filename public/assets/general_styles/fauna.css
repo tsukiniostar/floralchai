@@ -12,14 +12,40 @@ hr.sunflower-line {
 #nav {
   padding-bottom: 6px;
 }
+.thought {
+  list-style-position: inside;
+}
+summary {
+  color: var(--color-black);
+  padding: 5px;
+  border-radius: 5px;
+  width: fit-content;
+  margin: 8px auto;
+  border: 1px solid darkorange;
+}
+summary::marker {
+  content: " + "; /* Change to your desired symbol or emoji */
+  color: orange; /* Example: change color */
+}
+details[open] summary::marker {
+  content: " - "; /* Change symbol when details is open */
+}
+#statuscafe-username > a{
+  text-decoration: none;
+}
 a {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: darkorange;
   text-decoration: underline double;
 }
 a:hover {
   font-style: italic;
   background-color: lightyellow;
+}
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 .entry {
   outline: 10px solid var(--color-pink);
@@ -31,7 +57,6 @@ a:hover {
   margin-right: 1rem;
 }
 .title a {
-  font-size: 1.25rem;
   text-decoration: underline dotted 3px;
   color: darkorange;
 }
@@ -39,6 +64,9 @@ a:hover {
   font-style: italic;
   color: var(--color-white);
   background-color: darkorange;
+}
+.date, .title a {
+  font-size: 1.05rem;
 }
 @media only screen and (max-width: 480px) {
   .entry {

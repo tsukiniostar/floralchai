@@ -162,7 +162,6 @@ hr.dashed {
 .align-center {
     text-align: center;
     display: block;
-    margin: auto;
 }
 @media only screen and (max-width: 960px) {
     body {
