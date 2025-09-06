@@ -18,6 +18,8 @@
         }
         a {
             color: var(--color-brown);
+            text-decoration: underline 2px solid;
+            text-underline-offset: 6px;
         }
         a:hover {
             background-color: var(--color-white);
@@ -77,8 +79,12 @@
         }
         .guestbook-message {
             background-color: var(--color-white);
-            border-left: 8px solid var(--color-green);
-            padding: 0.25rem;
+            border-left: 10px solid var(--color-green);
+            padding: 0.8rem;
+            margin: 1rem;
+        }
+        p, blockquote {
+            margin: 15px auto;
         }
         @media only screen and (max-width: 800px) {
             body {
