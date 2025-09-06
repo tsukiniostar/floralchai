@@ -2,13 +2,11 @@ body {
     font-family: "SourceSerif4", 'Times New Roman', Times, serif;
     background-image: url("/assets/graphics/dot13.gif");
 }
-hr.line {
-  border: none;
-  height: 37px; 
-  background-image: url('../graphics/heart-line.png'); 
-  background-repeat: no-repeat; 
-  background-position: center;
-  background-size: contain;
+.code {
+    background-color: var(--color-brown);
+}
+.code:hover, .code:focus {
+    color: var(--color-white);
 }
 .bushes {
     border: 10px solid;

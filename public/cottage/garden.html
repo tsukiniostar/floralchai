@@ -38,6 +38,43 @@
             padding-left: 20px;
             padding-right: 20px;
         }
+        button {
+            padding: 4px;
+            text-decoration: none;
+            text-align: center;
+            border: 2px solid seashell;
+            color: var(--color-white);
+            background-color: var(--color-brown);
+            font-family: "Nunito", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        button:hover {
+            border: 2px dotted var(--color-brown);
+            background-color: hotpink;
+            cursor: pointer;
+        }
+        #guestbooks___guestbook-form {
+            margin: 1rem;
+        }
+        input, textarea {
+            max-width: 100%;
+            width: 560px;
+            padding: 4px;
+            color: var(--color-brown);
+            border: none;
+            border-bottom: 2px dotted var(--color-brown);
+            outline: none;
+            margin-bottom: 5px;
+            font-size: 0.75rem;
+            font-family: "Nunito", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        input:focus, textarea:focus {
+            border: 2px solid var(--color-brown);
+        }
+        .sunflower {
+            margin: auto; 
+            display: block;
+            max-width: 100%;
+        }
         @media only screen and (max-width: 800px) {
             body {
                 background-color: seashell;
@@ -62,9 +99,8 @@
         <li>Tell me about your opinions on movies that we have the same taste</li>
         <li>Or if you don't just tell me about your day</li>
     </ul>
-    <h2>Questions <span>(These questions are optional to answer)</span></h2>
+    <h2>Questions <span>(Optional questions if you don't know what to say)</span></h2>
     <ol>
-        <li>Are you feeling well today?</li>
         <li>What has been on your mind lately?</li>
         <li>What is your favourite movie?</li>
         <li>Your most favourite character?</li>
@@ -72,9 +108,47 @@
     </ol>
     <img class="snail" src="/assets/graphics/_ajisai_katatsumuri.png">
  </div>
- <b style="color: red;margin: 20px;">THIS PAGE IS BEING REWORK/UNDER CONSTRUCTION</b>
- <!--  <div id="c_widget"></div> -->
+ <div class="guestbook">
+ <i style="color: hotpink;"><h2>Leave your letter here</h2></i>
+  <!-- Guestbook Script -->
+ <script async src="https://guestbooks.meadow.cafe/resources/js/embed_script/885/script.js"></script>
+ <!-- Guestbook Form -->
+ <div id="guestbooks___guestbook-form-container">
+  <form id="guestbooks___guestbook-form" action="https://guestbooks.meadow.cafe/guestbook/885/submit" method="post">
+    
+    <div class="guestbooks___input-container">
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+    </div>
+    
+    <div class="guestbooks___input-container">
+      <input type="url" id="website" name="website" placeholder="Website (optional)">
+    </div>
+    
+    <div id="guestbooks___challenge-answer-container"></div>
+    
+    <div class="guestbooks___input-container">
+      <textarea id="text" name="text" placeholder="Leave your message here..." rows="4" required></textarea>
+    </div>
+    
+    <button type="submit">Submit</button>
+    <div id="guestbooks___error-message"></div>
+  </form>
+ </div>
+
+ <!-- Attribution (optional but appreciated!) -->
+ <div id="guestbooks___guestbook-made-with" style="text-align: center; margin-top: 10px; margin-bottom: 1rem;">
+  <small>Powered by <a href="https://guestbooks.meadow.cafe" target="_blank">Guestbooks</a></small>
+ </div>
+
+<!-- Messages Section -->
+<img class="sunflower" src="../assets/graphics/sunflower-line.gif">
+<h3 id="guestbooks___guestbook-messages-header" class="align-center">Messages</h3>
+<div id="guestbooks___guestbook-messages-container"></div>
+</div>
+ <!--  
+  <div id="c_widget"></div> 
+  <script src="/assets/scripts/comment-widget.js"></script>  
+ -->
  </main>
- <script src="/assets/scripts/comment-widget.js"></script>
 </body>
 </html>

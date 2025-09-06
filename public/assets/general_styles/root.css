@@ -100,6 +100,14 @@ h2 {
 hr {
     border: 0;
 }
+hr.line {
+  border: none;
+  height: 37px; 
+  background-image: url('../graphics/heart-line.png'); 
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-size: contain;
+}
 hr.rose {
     border: none;
     height: 37px; 
