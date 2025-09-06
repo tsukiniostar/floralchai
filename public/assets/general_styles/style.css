@@ -81,6 +81,8 @@ a:hover {
 .clover {
     max-width: 100%;
     width: 200px;
+    margin: auto;
+    display: block;
 }
 .clover:hover {
     transform: rotate(30deg);

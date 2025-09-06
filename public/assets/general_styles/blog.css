@@ -5,6 +5,8 @@ main {
     width: 60%;
     margin: auto;
     text-align: justify;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 }
 h1, h2, .date {
     font-family: "Inter", Arial, Helvetica, sans-serif;
@@ -81,6 +83,9 @@ blockquote {
 }
 .copy-button:hover {
   background-color: oldlace;
+}
+.align-center {
+    display: block;
 }
 @media only screen and (max-width: 950px) {
     main {
