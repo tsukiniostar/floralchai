@@ -96,6 +96,8 @@ h2 {
     border-left: 5px solid var(--color-brown);
     padding-left: 10px;
     background-color: oldlace;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 hr {
     border: 0;
