@@ -1,0 +1,129 @@
+:root {
+    --color-white: #fff;
+    --color-yellow: #f4d166;
+    --color-pink: #f7adbb;
+    --color-green: #b1d570;
+    --color-orange: #f8ab66;
+    --color-blue: #64cced;
+    --color-purple: #e0c4e3;
+    --color-black: #000000;
+}
+body {
+    background-image: url("../assets/chiikawa-clique/chiikawa-gang.png"), url("../assets/chiikawa-clique/gradient.png");
+    background-repeat: no-repeat, repeat-x;
+    background-position: top right;
+    background-attachment: scroll;
+    background-size: auto, 35%;
+    color: var(--color-black);
+}
+.base {
+    font-family: "SourceSerif4", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url("../assets/chiikawa-clique/logo.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-origin: content-box;
+    background-size: 80%;
+}
+.navi {
+    font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
+    font-size:  clamp(1.25rem, -0.875rem + 8.333vw, 2.25rem);
+    margin-top: calc(40% - 15vh);
+}
+.navi a {
+    text-decoration: underline dotted 5px;
+    font-weight: bolder;
+}
+.nav-link, h1, h2, h3, p {
+    margin-left: 1rem;
+}
+.link {
+    color: #aeaeae;
+    text-decoration: none;
+}
+.link:hover {
+    background-color: aliceblue;
+    text-decoration: underline solid 3px skyblue;
+}
+.star {
+    vertical-align: middle;
+}
+.example {
+    display: inline-block;
+    width: 300px;
+    text-align: center;
+}
+textarea {
+    font: normal .65rem 'Inter', sans-serif;
+    box-shadow: 0px 0px 1px #777;
+    background: #fefefe;
+    border: 0px;
+    color: #777;
+    padding: 0.5em;
+    resize: none;
+    float: none;
+    width: 250px;
+    height: 100px;
+    margin-top: .5rem;
+}
+.pink {
+    color: var(--color-pink);
+}
+.yellow {
+    color: var(--color-yellow);
+}
+.yellow:hover, .yellow:focus {
+    color: var(--color-white);
+    background-color: var(--color-yellow);
+}
+.green {
+    color: var(--color-green);
+}
+.purple {
+    color: var(--color-purple);
+}
+.purple:hover, .purple:focus {
+    color: var(--color-white);
+    background-color: var(--color-purple);
+}
+.blue {
+    color: var(--color-blue);
+}
+.orange {
+    color: var(--color-orange);
+}
+footer {
+    color: #777;
+    font-size: 0.6rem;
+    text-align: center;
+}
+.box {
+    border-left: solid 5px var(--color-black);
+    background-color: snow;
+    padding-left: 1rem;
+    width: 500px;
+    max-width: 100%;
+}
+@media only screen and (max-width: 1300px) {
+    body {
+        background-size: 35%;
+        background-position: top right;
+    }
+    .base {
+        background-size: 50%;
+    }
+    .base {
+        max-width: 100%;
+        width: 900px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    body {
+        background-size: contain;
+    }
+    .base {
+        background-image: none;
+    }
+    .navi {
+        margin-top: calc(110% - 5vh);
+    }
+}

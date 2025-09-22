@@ -34,12 +34,12 @@ const s_dstStart = ["March", "Sunday", 2, 2] // Example shown is the second Sund
 const s_dstEnd = ["November", "Sunday", 1, 2] // Example shown is the first Sunday of November at 2:00 am
 
 // Misc - Other random settings
-const s_commentsPerPage = 5 // The max amount of comments that can be displayed on one page, any number >= 1 (Replies not counted)
+const s_commentsPerPage = 10 // The max amount of comments that can be displayed on one page, any number >= 1 (Replies not counted)
 const s_maxLength = 800 // The max character length of a comment
 const s_maxLengthName = 16 // The max character length of a name
 const s_commentsOpen = true // Change to false if you'd like to close your comment section site-wide (Turn it off on Google Forms too!)
 const s_collapsedReplies = true // True for collapsed replies with a button, false for replies to display automatically
-const s_longTimestamp = false // True for a date + time, false for just the date
+const s_longTimestamp = true // True for a date + time, false for just the date
 let s_includeUrlParameters = false // Makes new comment sections on pages with URL parameters when set to true (If you don't know what this does, leave it disabled)
 const s_fixRarebitIndexPage = false // If using Rarebit, change to true to make the index page and page 1 of your webcomic have the same comment section
 
@@ -59,14 +59,14 @@ const s_filteredWords = [
 ]
 
 // Text - Change what messages/text appear on the form and in the comments section (Mostly self explanatory)
-const s_widgetTitle = "Leave a letter"
+const s_widgetTitle = "Notify here"
 const s_nameFieldLabel = "Name"
 const s_websiteFieldLabel = "Website (Optional)"
 const s_textFieldLabel = ""
 const s_submitButtonLabel = "Submit"
-const s_loadingText = "Loading letters..."
-const s_noCommentsText = "No snail send a letter in here yet..."
-const s_closedCommentsText = "The garden is closed..."
+const s_loadingText = "Loading comments..."
+const s_noCommentsText = "No kawa notify in here yet"
+const s_closedCommentsText = "Comments are closed"
 const s_websiteText = "Website" // The links to websites left by users on their comments
 const s_replyButtonText = "Reply" // The button for replying to someone
 const s_replyingText = "Replying to" // The text that displays while the user is typing a reply
@@ -102,17 +102,17 @@ const v_formHtml = `
 
     <div id="c_nameWrapper" class="c-inputWrapper">
         <label class="c-label c-nameLabel" for="entry.${s_nameId}">${s_nameFieldLabel}</label><br>
-        <input class="c-input c-nameInput" name="entry.${s_nameId}" id="entry.${s_nameId}" type="text" maxlength="${s_maxLengthName}" required>
+        <input placeholder="Kawa" class="c-input c-nameInput" name="entry.${s_nameId}" id="entry.${s_nameId}" type="text" maxlength="${s_maxLengthName}" required>
     </div>
 
     <div id="c_websiteWrapper" class="c-inputWrapper">
         <label class="c-label c-websiteLabel" for="entry.${s_websiteId}">${s_websiteFieldLabel}</label><br>
-        <input class="c-input c-websiteInput" name="entry.${s_websiteId}" id="entry.${s_websiteId}" type="url" pattern="https://.*">
+        <input placeholder="https://example.com" class="c-input c-websiteInput" name="entry.${s_websiteId}" id="entry.${s_websiteId}" type="url" pattern="https://.*">
     </div>
 
     <div id="c_textWrapper" class="c-inputWrapper">
         <label class="c-label c-textLabel" for="entry.${s_textId}">${s_textFieldLabel}</label>
-        <textarea class="c-input c-textInput" name="entry.${s_textId}" id="entry.${s_textId}" rows="4" cols="50"  maxlength="${s_maxLength}" required></textarea>
+        <textarea placeholder="Let me know you have joined the clique. Any suggestions are also welcomed!" class="c-input c-textInput" name="entry.${s_textId}" id="entry.${s_textId}" rows="4" cols="50"  maxlength="${s_maxLength}" required></textarea>
     </div>
 
     <input id="c_submitButton" name="c_submitButton" type="submit" value="${s_submitButtonLabel}" disabled>

@@ -62,21 +62,21 @@
     background-attachment: fixed;
     font-family: "SourceSerif4", Arial, Helvetica, sans-serif;
     font-size: 0.8rem;
-    color: #604E43;
+    color: #000000;
 }
 
 #c_widget button, #c_widget input[type=submit] {
-    padding: 4px;
+    padding: 5px;
     text-decoration: none;
 	text-align: center;
-    border: 1px solid var(--color-white);
     color: var(--color-white);
-    background-color: var(--color-brown);
-    font-family: "Nunito", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-black);
+    font-family: "SourceSerif4", 'Times New Roman', Times, serif;
 }
 #c_widget button:hover, #c_widget input[type=submit]:hover {
-    border: 1px dotted var(--color-brown);
-    background-color: hotpink;
+    border: 2px dotted var(--color-black);
+    background-color: var(--color-white);
+    color: var(--color-black);
 }
 #c_widget button:disabled, #c_widget input[type=submit]:disabled {opacity: 60%;}
 #c_widget button:disabled:hover, #c_widget input[type=submit]:disabled:hover {
@@ -95,7 +95,6 @@
     margin: -10px;
     margin-bottom: 10px;
     padding: 5px;
-    font-style: italic;
     text-align: left;
 }
 
@@ -112,9 +111,16 @@
 	outline: none;
     max-width: calc(100% - 10px);
     width: 500px;
+    font: normal .65rem 'Inter', sans-serif;
+    box-shadow: 0px 0px 1px #777;
+    background: #fefefe;
+    border: 0px;
+    color: #777;
+    padding: 0.5em;
+    margin-top: .5rem;
 }
 .c-input:focus {
-    border: 1px solid var(--color-brown);
+    border: 2px solid var(--color-brown);
 }
 
 .c-textInput {
@@ -129,7 +135,7 @@
 .c-comment {
     margin-bottom: 15px;
     padding: 10px;
-    border: 1px dashed var(--color-brown);
+    box-shadow: 0px 0px 1px #777;
     background-color: #fffefc;
     max-width: calc(100% - 10px);
     width: 500px;
@@ -141,7 +147,7 @@
     margin-left: auto;
     margin-right: 0;
     padding-left: 10px;
-    border-left: 5px solid hotpink;
+    border-left: 5px solid var(--color-black);
     background-color: #fffefc;
 }
 .c-reply:last-child {
@@ -162,7 +168,7 @@
 }
 .c-site {
     text-decoration: none;
-    color: hotpink;
+    color: var(--color-black);
 }
 .c-site:hover {
     text-decoration: underline;
@@ -195,4 +201,12 @@
 .c-paginationButton {
     margin-right: 4px;
     margin-left: 4px;
+}
+button {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+}
+button:hover {
+    scale: none;
 }
