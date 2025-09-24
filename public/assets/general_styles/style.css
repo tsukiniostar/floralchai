@@ -34,9 +34,11 @@ body {
     drop-shadow(-1px -1px 0 var(--color-brown));
 }
 .meangirls_page {
-    border: 1px solid darkred;
+    border: 3px dotted darkred;
     max-width: 100%;
-    width: calc(100% - 10px);
+    width: 320px;
+    margin: 1.5rem auto;
+    display: block;
 }
 .imgtxt span.meangirls_text {
   opacity: 0;
@@ -45,7 +47,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 99;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: #FFF;
   font-family: Impact, "Nunito", sans-serif;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -125,15 +127,18 @@ a:hover {
 .content-wrapper {
     display: flex;
     justify-content: start;
-    align-items: center;
     gap: 0.2rem;
     align-items: flex-start;
 }
 .nekochime {
     background-image: url("/assets/graphics/nekochime.jpg");
+    background-repeat: no-repeat; 
+    background-position: center center; 
+    background-size: auto 100%;
     image-rendering: pixelated;
+    max-width: 100%;
     width: 570px;
-    height: 400px;
+    height: auto;
     box-shadow: 0 0 18px 24px var(--color-white) inset;
     padding-right: 24px;
 }
@@ -196,6 +201,6 @@ footer {
     .nekochime {
         max-width: 100%;
         width: auto;
-        height: 320px;
+        height: auto;
     }
 }
