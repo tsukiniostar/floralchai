@@ -96,6 +96,9 @@ footer {
     font-size: 0.6rem;
     text-align: center;
 }
+.chiikawasbutton {
+    scale: 1.15;
+}
 .box {
     border-left: solid 5px var(--color-black);
     background-color: snow;

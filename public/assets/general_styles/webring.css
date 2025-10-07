@@ -18,14 +18,14 @@
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    height: 100px;
-    max-width: 100px;
     width: 100%;
     display: block;
+    height: auto;
 }
 #webringdescbox {
-    height: 100px;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
     box-sizing: border-box;
     border: 1px dashed #DD28A7;
 }
@@ -39,7 +39,19 @@
 }
 @media only screen and (max-width: 320px) {
     .templateWebring {
-        width: 200px;
-        max-width: calc(100% - 20px);
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #webringiconbox {
+        height: 180px;
+    }
+    #webringdescbox {
+        padding: 5px;
+    }
+    #text {
+        margin-block-start: 1.25rem;
     }
 }

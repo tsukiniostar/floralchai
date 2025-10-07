@@ -58,6 +58,13 @@
         #guestbooks___guestbook-form {
             margin: 1rem;
         }
+        #guestbooks___pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* space between buttons and page label */
+        }
         input, textarea {
             max-width: 100%;
             width: 560px;
@@ -111,10 +118,11 @@
     <ul>
         <li>All rule in "Site guidelines" applies here, especially rule 7</li>
         <li>Tell me about your opinions on movies that we have the same taste</li>
-        <li>Or if you don't just tell me about your day</li>
+        <li>Or if you don't just tell me <b>about your day</b> or <b>about yourself</b></li>
     </ul>
     <h2>Questions <span>(Optional questions if you don't know what to say)</span></h2>
     <ol>
+        <li>Introduce yourself?</li>
         <li>What has been on your mind lately?</li>
         <li>What is your favourite movie?</li>
         <li>Your most favourite character?</li>
@@ -125,7 +133,7 @@
  <div class="guestbook">
  <i style="color: hotpink;"><h2>Leave your letter here</h2></i>
   <!-- Guestbook Script -->
- <script async src="https://guestbooks.meadow.cafe/resources/js/embed_script/885/script.js"></script>
+ <script async src="../assets/scripts/guestbook.js"></script>
  <!-- Guestbook Form -->
  <div id="guestbooks___guestbook-form-container">
   <form id="guestbooks___guestbook-form" action="https://guestbooks.meadow.cafe/guestbook/885/submit" method="post">

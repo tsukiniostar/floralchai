@@ -1,5 +1,4 @@
 body {
-    font-family: "SourceSerif4", 'Times New Roman', Times, serif;
     background-image: url("/assets/graphics/dot13.gif");
 }
 .code {
@@ -150,7 +149,7 @@ a:hover {
     font-style: normal;
     text-decoration: underline 3px #fff;
 }
-.chiikawa, .chiikawa h2 {
+.chiikawa {
     background-image: url("../chiikawa-clique/chiikawa-clique.jpg");
     background-size: cover;
     color: #fff;
@@ -190,9 +189,13 @@ footer {
     }
 }
 @media only screen and (max-width: 480px) {
+    .table_profile {
+        overflow-x: auto;
+    }
     .profile, .box_about {
-        width: 220px;
-        max-width: calc(100% - 20px);
+        width: 95%;
+        display: block;
+        margin: 10px auto;
     }
     .box-right {
         max-width: calc(100% - 20px);
