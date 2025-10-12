@@ -4,7 +4,8 @@
     --color-pink: #FCC5CC;
     --color-green: #ADD548;
     --color-orange: #FFA600;
-    --color-blue: #7ECBD3;
+    --color-blue: hsl(186, 49%, 66%);
+    --color-yellow: #FCD639;
     --color-black: #000000;
 }
 @font-face {
@@ -83,7 +84,7 @@ body {
     letter-spacing: 0.3rem;
 }
 .btn-nav {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: "Nunito", Arial, Helvetica, sans-serif;
     text-decoration: underline 3px dotted;
     font-style: italic;
@@ -148,6 +149,9 @@ hr.dashed {
 .blue {
     color: var(--color-blue);
 }
+.yellow {
+    color: var(--color-yellow);
+}
 .heart:hover {
     background-color: darkred;
 }
@@ -163,7 +167,10 @@ hr.dashed {
 .blue:hover {
     background-color: var(--color-blue);
 }
-.green:hover, .orange:hover, .blue:hover, .pink:hover, .heart:hover {
+.yellow:hover {
+    background-color: var(--color-yellow);
+}
+.green:hover, .orange:hover, .blue:hover, .pink:hover, .heart:hover, .yellow:hover {
     color: var(--color-white);
     font-style: normal;
 }

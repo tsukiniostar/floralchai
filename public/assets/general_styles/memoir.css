@@ -1,0 +1,53 @@
+body {
+  background-image: url("../graphics/che_b03.gif");
+}
+hr.string {
+  border: none;
+  height: 15px; 
+  background-image: url('../graphics/dandelion-line.gif'); 
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-size: contain;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.entry {
+    border: 0.2rem double var(--color-green);
+    padding: 0.5rem;
+}
+.title {
+    font-size: 1.5rem;
+}
+.title-link {
+  color: #F6BE00;
+  text-decoration: overline;
+}
+.title-link:hover {
+  color: var(--color-black);
+  font-weight: bold;
+}
+img {
+  margin: 5px auto;
+  display: block;
+}
+.link {
+  color: var(--color-green);
+  text-decoration: underline dotted 3px;
+}
+.link:hover, .title-link:hover {
+  font-weight: bold;
+  font-size: 1.6rem;
+  font-style: italic;
+}
+.top {
+  color: #F6BE00;
+  text-decoration: none;
+}
+.top:hover {
+  background-color: oldlace;
+  text-decoration: overline dotted 3px;
+}

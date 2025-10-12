@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://floralchai.neocities.org/memoir/weird-web-october/camera.html">
+    <link rel="octo:octothorpes" href="weirdweboctober">
+    <link rel="octo:octothorpes" href="Camera">
+    <title>Camera</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-black) var(--color-white);
+            scroll-behavior: smooth;
+            text-align: center;
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 130%;
+        }
+
+        body {
+            background-attachment: fixed;
+            color: var(--color-brown);
+            font-family: "SourceSerif4", 'Times New Roman', Times, serif;
+            background-color: #f4b8da;
+        }
+
+        .base, .base-sidebg {
+            width: min(10rem, 100%);
+            padding: 1.2rem;
+        }
+
+        .base-sidebg {
+            z-index: -999;
+            top: 0;
+            bottom: 0;
+        }
+
+        .base-sidebg {
+            position: fixed;
+            padding: 1.5rem;
+            background-image: url("../../assets/graphics/dot-03.gif");
+            background-repeat: repeat;
+            background-position: left top;
+            background-size: auto;
+            background-position: scroll;
+        }
+        .base-sidebg::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: -50px; /* move it outside */
+            width: 50px;  /* width of your border strip */
+            height: 100%;
+            background-image: url("../../assets/graphics/p_lace.png");
+            background-repeat: repeat-y;
+            background-size: 50px 60px;
+        }
+        .pte, .jokebear {
+            margin: auto;
+            display: block;
+            width: 20rem;
+            max-width: 100%;
+        }
+        .jokebear {
+            width: 15rem;
+        }
+.camera-frame {
+  position: relative;
+  display: block;
+  margin: auto;
+  width: 100%;
+  max-width: 500px; /* adjust as needed */
+}
+
+/* camera overlay always on top */
+.camera {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* screen area positioned exactly where the camera LCD is */
+.screen {
+  position: absolute;
+  top: 19%;   /* adjust these values to fit your camera overlay */
+  left: 5.5%;
+  width: 55%;
+  height: 70%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* inner image fits inside the screen */
+.photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.photo.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+button {
+  background: #eee;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-family: "SourceSerif4", Arial, Helvetica, sans-serif;
+}
+
+button:hover {
+  background: #ddd;
+}
+a {
+    color: var(--color-black);
+}
+a:hover {
+    font-weight: bold;
+    font-style: italic;
+}
+img {
+    image-rendering: pixelated;
+}
+.back {
+    padding: 1.5rem;
+}
+@media only screen and (max-width: 1100px) {
+    .base, .base-sidebg {
+        display: none;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="base-sidebg"></div>
+<div class="camera-frame">
+  <div class="screen">
+    <img id="photo" src="../../assets/media/moomin.jpg" alt="Inside photo" class="photo active">
+    <img id="photo2" src="../../assets/png/poop.jpg" alt="Next photo" class="photo">
+  </div>
+  <img src="../../assets/graphics/camera.png" alt="Camera overlay" class="camera">
+</div>
+<div class="controls">
+  <button id="prevBtn">◀ Prev</button>
+  <button id="nextBtn">Next ▶</button>
+</div>
+<img class="pte" src="../../assets/graphics/pte-polaroid.png">
+<img class="jokebear" src="../../assets/graphics/jokebear-polaroid.jpg">
+<a class="back" href="./index.html">Back?</a>
+<script>
+const images = [
+  "../../assets/media/kevinbusinesscard.jpg",
+  "../../assets/media/vivian.jpg",
+  "../../assets/png/poop.jpg",
+  "../../assets/png/plush.jpg",
+  "../../assets/png/monkey.jpg",
+  "../../assets/png/hehe.jpg",
+  "../../assets/png/mariah.webp",
+  "../../assets/png/nakuru.webp",
+  "../../assets/png/raisondetre.webp",
+  "../../assets/png/melpia.webp",
+  "../../assets/png/snow.webp",
+  "../../assets/png/tetpopuko.webp",
+  "../../assets/png/strawberries.webp",
+  "../../assets/png/smolstrawb.webp",
+  "../../assets/png/luckydog.webp",
+  "../../assets/png/room.webp",
+  "../../assets/media/moomin.jpg",
+  "../../assets/png/beetlelove.webp"
+];
+
+let index = 0;
+const photo1 = document.getElementById("photo");
+const photo2 = document.getElementById("photo2");
+
+let showingPhoto1 = true;
+
+function showNext() {
+  index = (index + 1) % images.length;
+
+  const current = showingPhoto1 ? photo1 : photo2;
+  const next = showingPhoto1 ? photo2 : photo1;
+
+  next.src = images[index];
+  next.classList.add("active");
+  current.classList.remove("active");
+
+  showingPhoto1 = !showingPhoto1;
+}
+
+document.getElementById("nextBtn").addEventListener("click", showNext);
+document.getElementById("prevBtn").addEventListener("click", () => {
+  index = Math.floor(Math.random() * images.length);
+  showNext();
+});
+</script>
+</body>
+</html>
