@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://floralchai.neocities.org/memoir/weird-web-october/battle.html">
+  <link rel="octo:octothorpes" href="weirdweboctober">
+  <link rel="octo:octothorpes" href="Battle">
+  <title>Battle</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: oldlace;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a.active {
+      color: #0077cc;
+      border-color: #0077cc;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 10px 0 20px;
+      color: #222;
+      height: 30px;
+    }
+
+    .section {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section.active {
+      display: flex;
+    }
+
+    .img-wrap {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      background: white;
+      border: 2px solid ;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      overflow: hidden;
+      background: url("../../assets/graphics/chiikawa-grass.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .img-wrap img.main {
+      width: 90%;
+      height: auto;
+      pointer-events: none;
+      user-select: none;
+      transition: transform 0.2s;
+    }
+
+    .punch-effect {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(0.6);
+      opacity: 0;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      z-index: 10;
+    }
+
+    .punch-effect.show {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .label {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#usagi" id="link-usagi">Usagi</a>
+    <a href="#momoga" id="link-momoga">Momoga</a>
+  </nav>
+  
+  <h1 id="headline"></h1>
+  
+  <div id="usagi" class="section">
+    <div class="img-wrap" data-punch="https://file.garden/ZTeNOnlIhS-zrdb1/audio/punch.mp3" data-follow="https://file.garden/ZTeNOnlIhS-zrdb1/audio/usagi-una.mp3">
+      <img class="main" src="../../assets/graphics/usagi-plush.png" alt="Usagi plush">
+    </div>
+    <div class="label">Usagi Plush</div>
+  </div>
+
+  <div id="momoga" class="section">
+    <div class="img-wrap" data-punch="https://file.garden/ZTeNOnlIhS-zrdb1/audio/punch.mp3" data-follow="https://file.garden/ZTeNOnlIhS-zrdb1/audio/momonga-cry.mp3">
+      <img class="main" src="../../assets/graphics/momoga-cry.png" alt="Momoga crying">
+    </div>
+    <div class="label">Momoga</div>
+  </div>
+
+  <script>
+    let currentPunchAudio = null;
+    let currentFollowAudio = null;
+
+    function playSound(src, callback) {
+      if (!src) return;
+      const audio = new Audio(src);
+      audio.addEventListener('ended', () => callback && callback());
+      audio.play().catch(() => {});
+      return audio;
+    }
+
+    document.querySelectorAll('.img-wrap').forEach(el => {
+      const punchSound = el.dataset.punch;
+      const followSound = el.dataset.follow;
+
+      el.addEventListener('click', (e) => {
+        if (currentPunchAudio) currentPunchAudio.pause();
+        if (currentFollowAudio) currentFollowAudio.pause();
+
+        const punchImg = document.createElement('img');
+        punchImg.src = '../../assets/graphics/collision.png';
+        punchImg.className = 'punch-effect';
+        punchImg.style.left = e.offsetX + 'px';
+        punchImg.style.top = e.offsetY + 'px';
+        el.appendChild(punchImg);
+
+        requestAnimationFrame(() => punchImg.classList.add('show'));
+        setTimeout(() => punchImg.remove(), 400);
+
+        currentPunchAudio = playSound(punchSound, () => {
+          currentFollowAudio = playSound(followSound);
+        });
+      });
+    });
+
+    // Headline animation control to prevent overlapping when switching fast
+    const headlineState = { timerId: null, version: 0 };
+
+    function animateHeadline(target) {
+      const headline = document.getElementById('headline');
+      // bump version to cancel any running instance
+      headlineState.version++;
+      const myVersion = headlineState.version;
+
+      // clear previous timer if exists
+      if (headlineState.timerId) {
+        clearInterval(headlineState.timerId);
+        headlineState.timerId = null;
+      }
+
+      // start fresh
+      headline.textContent = '';
+      const parts = ['You', 'VS', target === 'usagi' ? 'Usagi' : 'Momoga'];
+      let i = 0;
+
+      headlineState.timerId = setInterval(() => {
+        // if version changed, abort
+        if (myVersion !== headlineState.version) {
+          clearInterval(headlineState.timerId);
+          headlineState.timerId = null;
+          return;
+        }
+
+        headline.textContent += (i === 0 ? '' : ' ') + parts[i];
+        i++;
+        if (i >= parts.length) {
+          clearInterval(headlineState.timerId);
+          headlineState.timerId = null;
+        }
+      }, 500);
+    }
+
+    function showSectionFromHash() {
+      const hash = location.hash.replace('#', '') || 'usagi';
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+
+      const activeSec = document.getElementById(hash);
+      const activeLink = document.getElementById('link-' + hash);
+      if (activeSec) activeSec.classList.add('active');
+      if (activeLink) activeLink.classList.add('active');
+
+      animateHeadline(hash);
+    }
+
+    window.addEventListener('hashchange', showSectionFromHash);
+    window.addEventListener('load', showSectionFromHash);
+  </script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://floralchai.neocities.org/memoir/weird-web-october/containers.html">
+  <link rel="octo:octothorpes" href="weirdweboctober">
+  <link rel="octo:octothorpes" href="Containers">
+  <title>Containers</title>
+  <style>
+    :root {
+      --font-size: 5rem;
+      --speed-ms: 180; /* fallback speed if JS doesn't override */
+    }
+body {
+  background: #e7edf2;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.scene {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 2px solid darkred;
+  background-image: url("../../assets/graphics/scene-window.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+  display: block;
+}
+
+/* Info box */
+.info {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: white;
+  color: #444;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  z-index: 40;
+}
+
+/* Table image */
+.table-img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110%;
+  max-width: 1000px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* Cat */
+.cat-wrap {
+  position: absolute;
+  bottom: 12%;
+  left: 8%;
+  width: 22%;
+  max-width: 240px;
+  height: auto;
+  z-index: 9;
+}
+.cat {
+  position: absolute;
+  top: -120px;
+  left: 0;
+  width: 100%;
+  transition: transform 0.4s ease;
+  z-index: 99;
+}
+.cat-wrap:hover .cat {
+  transform: translateY(-15%);
+}
+
+/* Table top (where tuna can sits) */
+.table-top {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Tuna can */
+.can {
+  width: 45%;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.25s ease, filter 0.2s;
+  will-change: transform;
+  z-index: 999;
+  position: relative;
+}
+.can:hover {
+  transform: scale(1.05);
+}
+
+/* Shadow */
+.shadow {
+  position: absolute;
+  top: calc(38% + 21%);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 3%;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  filter: blur(8px);
+  z-index: 29;
+}
+#canLabel {
+  font-size:14px;
+  color: black;
+  margin-top:6px;
+  background-color: #ffe32b;
+  border-radius: 5px;
+}
+    h1 {
+      font-size: var(--font-size);
+      letter-spacing: 0.02em;
+      margin: 0;
+      display: block;
+      align-items: center;
+      cursor: pointer; /* click to restart */
+      user-select: none;
+    }
+
+    /* invisible letters container so we can animate per-letter */
+    .letter {
+      opacity: 0;
+      transform: translateY(6px);
+      display: inline-block;
+      transition: opacity 150ms ease, transform 160ms cubic-bezier(.2,.9,.2,1);
+      will-change: opacity, transform;
+    }
+
+    .letter.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* typing caret */
+    .caret {
+      width: 0.14em;
+      height: 1em;
+      margin-left: 0.12em;
+      background: currentColor;
+      display: inline-block;
+      animation: blink 1s steps(2,start) infinite;
+      vertical-align: bottom;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* small responsive tweak */
+    @media (max-width: 480px) {
+      :root { --font-size: 3rem; }
+    }
+/* --- Responsive tweaks --- */
+@media (max-width: 768px) {
+  .info {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+  .cat-wrap {
+    bottom: 10%;
+    left: 6%;
+    width: 28%;
+  }
+  .table-top {
+    top: 40%;
+    width: 70%;
+  }
+  .can {
+    width: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .scene {
+    aspect-ratio: 3 / 4;
+  }
+  .cat-wrap {
+    bottom: 4%;
+    left: 5%;
+    width: 35%;
+  }
+  .table-top {
+    top: 60%;
+    width: 85%;
+  }
+  .can {
+    width: 45%;
+  }
+  .info {
+    font-size: 0.75rem;
+  }
+  .table-img {
+    bottom: -50%;
+  }
+}
+  </style>
+</head>
+<body>
+  <h1 id="tunaaaa" title="Click to replay" aria-live="polite"></h1>
+  <div class="stage">
+    <div class="hud">Hover to see the cat. Click the can to open/close it</div>
+
+    <div class="scene" id="scene">
+      <img class="table-img" src="../../assets/graphics/wooden-table.png" alt="Wooden table">
+
+      <!-- Cat hiding behind table -->
+      <div class="cat-wrap">
+        <img id="cat" class="cat" src="../../assets/graphics/kitty.png" alt="Cat hiding under table">
+      </div>
+
+      <!-- Tabletop area with can -->
+      <div class="table-top">
+        <div style="text-align:center;">
+          <img id="can" class="can" src="../../assets/graphics/canclosed.png" alt="Canned tuna" role="button" tabindex="0">
+          <div id="canLabel" class="tuna-label">Tuna can closed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Sounds -->
+  <audio id="meowSound" src="https://file.garden/ZTeNOnlIhS-zrdb1/audio/meow.mp3" preload="auto"></audio>
+  <audio id="canOpenSound" src="https://file.garden/ZTeNOnlIhS-zrdb1/audio/open-can.mp3" preload="auto"></audio>
+
+  <script>
+// --- Select Elements ---
+const catWrap = document.querySelector('.cat-wrap');
+const cat = document.querySelector('.cat');
+const can = document.querySelector('.can');
+const label = document.querySelector('.tuna-label'); // label text element
+
+// --- Audio Elements ---
+const meowSound = document.getElementById('meowSound');
+const canOpenSound = document.getElementById('canOpenSound');
+
+// --- Sound Helper ---
+function playSound(sound) {
+  sound.currentTime = 0;
+  sound.play().catch(() => {});
+}
+
+// --- Cat Click: Meow + Small Wiggle ---
+catWrap.addEventListener('click', () => {
+  playSound(meowSound);
+
+  // Small bounce animation
+  cat.style.transition = 'transform 0.3s ease';
+  cat.style.transform = 'translateY(-20px)';
+  setTimeout(() => {
+    cat.style.transform = 'translateY(0)';
+  }, 300);
+});
+
+// --- Can Click: Toggle Open/Close ---
+let isOpen = false;
+
+can.addEventListener('click', () => {
+  if (!isOpen) {
+    // Play open sound
+    playSound(canOpenSound);
+
+    // Animate "pop" open
+    can.style.transform = 'scale(1.05) rotate(-3deg)';
+
+    // Swap to open image
+    can.src = '../../assets/graphics/canopen.png';
+    label.textContent = 'Tuna can open';
+
+    // Cat reacts
+    setTimeout(() => {
+      playSound(meowSound);
+      cat.style.transition = 'transform 0.5s ease';
+      cat.style.transform = 'translateY(-30px)';
+      setTimeout(() => (cat.style.transform = 'translateY(0)'), 1200);
+    }, 400);
+
+    isOpen = true;
+  } else {
+    // Play closing sound
+    playSound(canOpenSound);
+
+    can.style.transform = 'scale(1.05) rotate(3deg)';
+    setTimeout(() => (can.style.transform = 'scale(1)'), 200);
+
+    // Swap back to closed image
+    can.src = '../../assets/graphics/canclosed.png';
+    label.textContent = 'Tuna can closed';
+
+    isOpen = false;
+  }
+});
+</script>
+  <script>
+    (function () {
+      // configuration: you can change typingSpeed to speed up/slow down (ms)
+      const typingSpeed = 140; // ms per character
+      const pauseAfter = 300; // pause after whole word typed (ms)
+      // the exact sequence: T u n a a a a !
+      const letters = ['T','u','n','a','a','a','a','!'];
+
+      const container = document.getElementById('tunaaaa');
+
+      function buildEmptyLetters() {
+        container.innerHTML = ''; // clear
+        letters.forEach((ch, idx) => {
+          const span = document.createElement('span');
+          span.className = 'letter';
+          span.setAttribute('data-char', ch);
+          // we set textContent now so screen readers can read it if visible;
+          // but keep it visually hidden via CSS until we add 'visible'
+          span.textContent = ch;
+          container.appendChild(span);
+        });
+        // caret element
+        const caret = document.createElement('span');
+        caret.className = 'caret';
+        caret.setAttribute('aria-hidden', 'true');
+        container.appendChild(caret);
+      }
+
+      // animate letters one by one
+      async function typeWord() {
+        const spans = Array.from(container.querySelectorAll('.letter'));
+        // ensure all start hidden
+        spans.forEach(s => s.classList.remove('visible'));
+
+        for (let i = 0; i < spans.length; i++) {
+          // reveal this letter
+          spans[i].classList.add('visible');
+          // wait
+          await wait(typingSpeed);
+        }
+        // small pause when complete
+        await wait(pauseAfter);
+      }
+
+      function wait(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      // replay control
+      let isTyping = false;
+      async function run() {
+        if (isTyping) return;
+        isTyping = true;
+        buildEmptyLetters();
+        await typeWord();
+        isTyping = false;
+      }
+
+      // initial run
+      run();
+
+      // restart when heading clicked
+      container.addEventListener('click', run);
+
+      // optional: replay automatically every X ms (commented out)
+      // setInterval(() => { if (!isTyping) run();}, 4000);
+
+      // expose to window for quick debugging in console
+      window.tunaaaa = { run, setSpeed(ms) { /* not used by UI */ } };
+    })();
+  </script>
+</body>
+</html>
