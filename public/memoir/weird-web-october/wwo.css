@@ -1,19 +1,18 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
     background-color: var(--color-white);
-    margin: 0;
+    height: auto !important;
 }
-
+h1 {
+    text-align: center;
+}
 .calendar {
     width: 300px;
     background-color: #fff;
-    overflow: hidden;
     border: 1px solid var(--color-orange);
+    margin: 1rem;
+    display: block;
+    margin: auto;
 }
 
 .month-header {
