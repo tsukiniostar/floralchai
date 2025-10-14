@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/general_styles/root.css">
+    <link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://floralchai.neocities.org/memoir/weird-web-october/upside-down.html">
+    <link rel="octo:octothorpes" href="weirdweboctober">
+    <link rel="octo:octothorpes" href="Upside-down">
+    <title>Upside-down</title>
+    <style>
+        .base {
+            padding: 0;
+        }
+        body {
+            background-image: url("../../assets/graphics/chii-trio.png");
+            background-repeat: no-repeat;
+            background-position: right top;
+            overflow-x: hidden;
+        }
+        .paragraph {
+            white-space: pre-wrap;
+        }
+        .upside-down {
+            transform: rotate(180deg);
+            display: inline-block; /* Essential for inline elements like span */
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .italic {
+            font-style: italic;
+        }
+        .red {
+            color: darkred;
+        }
+        .orange {
+            color: orange;
+        }
+        .blue {
+            color: blue;
+        }
+        .plum {
+            color: plum;
+        }
+        .yellow {
+            color: var(--color-yellow);
+        }
+        .green {
+            color: var(--color-green);
+        }
+        .black {
+            color: black;
+        }
+        .upside-down:hover, .upside-down:active {
+            transform: rotate(0deg);
+            cursor: pointer;
+        }
+        .hachi, .popuko {
+            margin: 15px;
+            border: 3px solid darkred;
+            width: 290px;
+            max-width: 100%;
+        }
+        @media only screen and (max-width: 960px) {
+            body {
+                background-size: 45%;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .paragraph {
+                text-align: center;
+                word-break: keep-all;
+                overflow-wrap: break-word;
+                font-size: 0.75rem;
+            }
+            .hachi, .popuko {
+                margin: 0;
+            }
+        }
+        @media only screen and (max-width: 350px) {
+            .paragraph {
+                font-size: 0.65rem;
+            }
+            .hachi, .popuko {
+                width: 230px;
+                display: block;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="base">
+    <p class="paragraph">
+      <span class="bold black">Can we</span> pretend that <span class="upside-down bold orange">airplanes</span> in the <span class="italic blue">night sky</span>
+      Are like shooting <span class="yellow bold">stars</span>?
+      I could really use a <span class="upside-down bold yellow">wish right now</span>
+      <span class="upside-down bold italic red">Wish right now</span>, wish right now
+
+      <span class="upside-down bold black">Can we</span> pretend that <span class="upside-down bold green">airplanes</span> in the <span class="upside-down italic blue">night sky</span>
+      Are like shooting <span class="yellow bold">stars</span>?
+      I could really use a <span class="upside-down bold yellow">wish right now</span>
+      <span class="upside-down italic red">Wish right now</span>, wish right now
+        
+      <span class="upside-down italic black">Yeah</span>
+      I could use a <span class="bold blue">dream</span> or a <span class="upside-down italic blue">genie</span> or a <span class="upside-down italic yellow">wish</span>
+      To go back to a place much simpler than in this
+      'Cause after all the <span class="upside-down plum italic">partyin'</span>, and <span class="upside-down plum italic">smashin'</span>, and <span class="upside-down plum italic">crashin'</span>
+      And all the <span class="upside-down bold green">glitz</span>, and the <span class="upside-down italic green">glam</span>, and the <span class="upside-down italic plum">fashion</span>
+      And all the <span class="upside-down bold plum">pandemonium</span>, and all the <span class="italic red">madness</span>
+      There comes a time where you fade to the <span class="italic black">blackness</span>
+      <span class="italic red">And when you</span> <span class="yellow bold">star</span>in' at that phone in your lap
+      <span class="bold italic orange">And you hopin'</span>, but them people never call you back
+        
+      But that's just how the <span class="italic blue">story</span> un<span class="upside-down red bold">folds</span>
+      You get another hand soon after you <span class="upside-down red bold">fold</span>
+      And when your <span class="upside-down bold green">plans unravel</span> in the <span class="italic yellow">sand</span>
+      What would you <span class="upside-down italic bold red">wish</span> for if you had one chance?
+      So <span class="upside-down italic orange">airplane</span>, <span class="upside-down italic orange">airplane</span>, sorry I'm late
+      <span class="upside-down plum bold">I'm on my way</span>, so don't close that gate
+      If I don't make that, then I'll switch my <span class="upside-down blue bold">flight</span>
+      And <span class="upside-down italic black">I'll be right back</span> at it by the end of the <span class="upside-down blue bold">night</span>
+    </p>
+    <img class="hachi" src="../../assets/graphics/hachi-upsidedown.jpg">
+    <img class="popuko" src="../../assets/graphics/popuko-manga.jpg">
+    </main>
+</body>
+</html>
