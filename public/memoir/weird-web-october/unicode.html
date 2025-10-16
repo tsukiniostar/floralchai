@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://floralchai.neocities.org/memoir/weird-web-october/unicode.html">
+  <link rel="octo:octothorpes" href="weirdweboctober">
+  <link rel="octo:octothorpes" href="Unicode">
+  <title>Unicode — Night Sky</title>
+  <style>
+    :root{
+      --outside: ivory;
+      --border: darkred;
+      --bg: black;
+      --accent: rgba(255, 255, 255, 0.788);
+    }
+
+    html,body {
+        height:100%;
+        margin:0;
+        font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+        color: var(--bg);
+        background: var(--outside);
+    }
+
+    .container {
+        min-height:90%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:2rem;
+    }
+
+    .card{
+      width:min(1200px,95vw);
+      height:85vh;
+      background:rgba(255,255,255,0.02);
+      padding:1rem;
+      position:relative;overflow:hidden;
+      border: 3px solid var(--border);
+    }
+
+    pre[role="img"]{
+      margin:0;white-space:pre-wrap;
+      font-size:16px;
+      line-height:1.4;
+      color:var(--accent);
+      font-family:"Segoe UI Emoji", "Noto Color Emoji", ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      transform:scale(1.1);
+      transform-origin:center;
+      background: var(--bg);
+
+    }
+
+    .sparkles{position:absolute;inset:0;pointer-events:none}
+    .sparkle{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--accent);opacity:0;filter:blur(1px);}
+
+    @keyframes appear{0%{opacity:0;transform:scale(0.3)}50%{opacity:1;transform:scale(1.05)}100%{opacity:0;transform:scale(0.6)}}
+
+    .controls{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);z-index:5;display:flex;gap:10px;flex-wrap:wrap;justify-content: center; align-items: center}
+    .btn{background: var(--outside);border:3px solid var(--border);padding:8px 12px;border-radius:8px;color: var(--bg);font-size:14px;cursor:pointer}
+
+    .surprise-img{
+      position:absolute;top:1.5rem;right:1.5rem;width:200px;opacity:0;pointer-events:none;
+      transition:opacity 1s ease;
+    }
+
+    .surprise-img.show{opacity:0.6;}
+    .big {
+        font-size: 7.5rem;
+    }
+    @media only screen and (max-width:520px) {
+      pre[role="img"] {
+        font-size:13px;
+        transform:scale(1)
+    }
+      .card{
+        height:auto;
+        padding:0
+    }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card" id="card">
+      <pre role="img" aria-label="Starry night sky" id="art">
+⠀⠀⠀.　　　　　　　　　　　　　.　　　ﾟ .　　　　　　　　　　　　　. 　　　　　　　　　　　　　　　✦ 　　　　　,　　　　　　　.
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="big">☾</span>　　　　　　　　　　　　　　　✦ 　　　　　,　　　　　　　.
+　　　　　　*　　　　　　　　　　　. 　　˚　　　⠀　⠀  　　,　　　　　　.
+.　　　　　　　　　　　　　. 　　✦⠀　   　　　,　　　　　　　　　*
+　　　　　⠀　　　　⠀　　,.　　　　　　　　　　　　　. 　　✦⠀　   　　　,　　　　　　　　　*
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀.　　　　　 　　⠀　　　⠀.　✦ ⠀ ⠀　　　　　　　　　　　　　　⠀⠀⠀⠀⠀* ⠀⠀⠀.　　　　　　　　　　. ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀✦
+　　　　　　　　　　　　　.⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀ ⠀⠀⠀⠀⠀⠀.　　　　　　　　　　　　　.　　　ﾟ .　　　　　　　　　　　　　. 
+　　　　　　*⠀　　⠀  　　　　　⠀✦⠀　⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+　　　　　　*　　　　　　　　　　　　　　　　　　.
+　　　　.　　　　.　　　⠀
+　　　　　　　　　　　.　　　　　✦⠀　   　　　
+　　　　　　　⠀⠀⠀⠀⠀⠀.　　　　　　　　　　⠀⠀⠀⠀⠀⠀ 
+　　　˚　　　　　　　　ﾟ　　　　　.
+　.⠀　　⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀,
+　　　*　　⠀.
+　　　　　.　　　　　　　　　　⠀✦
+　˚　　　　　　　　　　　　　　*
+.⠀ 　　　　　　　　　　.　　　　　　　　.
+　　　　　✦⠀　   　　　,　　    　　　　　　　　.
+　　　　　　*　　　　　　　　　　　.
+　　　　　⠀　　　　⠀　　,
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀.　　　　　 　　⠀　　　⠀.　
+ 　　˚　　　⠀　⠀  　　,　　　　　　.
+　　　　　　　　　　　　　.
+　　　　　　*⠀　　⠀  　　　　　⠀✦⠀　
+　　　　　　*　　　　　　　　　　　　　　　　　　.
+　　　　.　　　　.　　　
+　　　　　　　　　　　.
+　　　　　　　
+　　　˚　　　　　　　　ﾟ　　　　　.
+　.⠀　⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀‍⠀,
+</pre>
+
+      <div class="sparkles" id="sparkles" aria-hidden="true"></div>
+
+      <img src="../../assets/graphics/hoshi.webp" alt="surprise star" class="surprise-img" id="surprise" />
+
+      <div class="controls" aria-hidden="true">
+        <button class="btn" id="regen">Regenerate</button>
+        <button class="btn" id="toggle">Toggle Motion</button>
+        <button class="btn" id="surpriseBtn">Make me surprise ✨</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const sparkles=document.getElementById('sparkles');
+      const art=document.getElementById('art');
+      const surprise=document.getElementById('surprise');
+      let COUNT=80;
+      let reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function rand(min,max){return Math.random()*(max-min)+min}
+      function clear(){sparkles.innerHTML=''}
+
+      function build(){
+        clear();
+        const rect=art.getBoundingClientRect();
+        const parentRect=document.getElementById('card').getBoundingClientRect();
+        for(let i=0;i<COUNT;i++){
+          const e=document.createElement('span');
+          e.className='sparkle';
+          const size=Math.round(rand(5,12));
+          e.style.width=e.style.height=size+'px';
+          e.style.left=rand(rect.left-parentRect.left+4,rect.right-parentRect.left-4)+'px';
+          e.style.top=rand(rect.top-parentRect.top+4,rect.bottom-parentRect.top-4)+'px';
+          if(!reduced){
+            const dur=Math.round(rand(900,2200))+'ms';
+            const delay=Math.round(rand(0,2000))+'ms';
+            e.style.animation=`appear ${dur} linear ${delay} both`;
+            e.style.animationIterationCount='infinite';
+          }else{e.style.opacity=1}
+          sparkles.appendChild(e);
+        }
+      }
+
+      build();
+      document.getElementById('regen').addEventListener('click',build);
+      document.getElementById('toggle').addEventListener('click',()=>{reduced=!reduced;build()});
+
+      document.getElementById('surpriseBtn').addEventListener('click',()=>{
+        surprise.classList.toggle('show');
+      });
+
+      window.addEventListener('resize',()=>{clearTimeout(window._t);window._t=setTimeout(build,150)});
+    })();
+  </script>
+</body>
+</html>

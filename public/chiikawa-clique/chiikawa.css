@@ -9,11 +9,11 @@
     --color-black: #000000;
 }
 body {
-    background-image: url("../assets/chiikawa-clique/chiikawa-gang.png"), url("../assets/chiikawa-clique/gradient.png");
-    background-repeat: no-repeat, repeat-x;
+    background-image: url("../assets/chiikawa-clique/chiikawa-gang.png"), url("../assets/chiikawa-clique/gradient.png"), url("../assets/graphics/sakura-pattern.png");
+    background-repeat: no-repeat, repeat-x, repeat;
     background-position: top right;
     background-attachment: scroll;
-    background-size: auto, 35%;
+    background-size: auto, 35%, auto;
     color: var(--color-black);
 }
 .base {
