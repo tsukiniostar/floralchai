@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../assets/general_styles/root.css">
+<link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://floralchai.neocities.org/memoir/weird-web-october/transition.html">
+<link rel="octo:octothorpes" href="weirdweboctober">
+<link rel="octo:octothorpes" href="Transition">
+<title>Transition</title>
+<style>
+    @font-face {
+        font-family: "EmilysCandy";
+        src: url("../../assets/fonts/EmilysCandy.ttf") format('truetype');
+    }
+
+  body {
+    margin: 0;
+    overflow: hidden;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    text-shadow:     
+    -1px -1px 0 var(--color-brown), /* Top-left shadow */
+     1px -1px 0 var(--color-brown), /* Top-right shadow */
+    -1px  1px 0 var(--color-brown), /* Bottom-left shadow */
+     1px  1px 0 var(--color-brown); /* Bottom-right shadow */;
+    color: var(--color-white); /* Set the fill color of the text */
+    font-weight: bold; /* Make the text bold */
+    text-align: center;
+    image-rendering: pixelated;
+  }
+  h2 {
+    font-family: "EmilysCandy", Arial, Helvetica, sans-serif;
+  }
+  /* --- Section base --- */
+  .section {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .section.active {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  /* --- Door section --- */
+  #door-section {
+    background: white;
+  }
+
+  #door {
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  #door:hover{
+    transform: scale(1.05);
+    content: url('../../assets/graphics/door-open.gif'); /* hover replacement */
+  }
+  /* --- Marquee section --- */
+  #marquee-section {
+    background: url("../../assets/graphics/forest-bg1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .marquee img {
+    width: auto;
+    animation: scroll 4s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  #scene-desc {
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  .final-text, #scene-desc, .extra-desc {
+    background-color: var(--color-yellow);
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid var(--color-brown);
+    transform: rotate(-4deg);
+  }
+  /* --- Final section --- */
+  #final-section {
+    background: url('../../assets/graphics/forest-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #final-img {
+    opacity: 0;
+    width: auto;
+    transition: opacity 1s ease;
+  }
+
+  .final-text {
+    opacity: 0;
+    margin-top: 15px;
+    transition: opacity 1s ease;
+  }
+  #name-input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    outline: none;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- Door Section -->
+  <section id="door-section" class="section active">
+    <h2>
+        A new adventure awaits 
+        <br><a target="_blank" href="https://moko.pupu.jp/"><img src="../../assets/graphics/piyos-angel.gif"></a>
+    </h2>
+    <input id="name-input" type="text" placeholder="Your name">
+    <img id="door" src="../../assets/graphics/door.gif" alt="Door">
+    <p class="extra-desc">Enter the journey?</p>
+  </section>
+
+  <!-- Marquee Section -->
+  <section id="marquee-section" class="section">
+    <div class="marquee">
+      <img class="walk" src="../../assets/graphics/putiko3.gif" alt="">
+    </div>
+    <div id="scene-desc">You're picking flowers for Piyo... clouds passing by in a rush</div>
+  </section>
+
+  <!-- Final Section -->
+  <section id="final-section" class="section">
+    <img id="final-img" src="../../assets/graphics/chick-flower.gif" alt="Final Image">
+    <div id="text1" class="final-text">Thank you <span id="username"></span></div>
+    <div id="text2" class="final-text">Piyo is really grateful for your help!</div>
+  </section>
+
+<script>
+  const door = document.getElementById('door');
+  const nameInput = document.getElementById('name-input');
+  const username = document.getElementById('username');
+
+  const doorSection = document.getElementById('door-section');
+  const marqueeSection = document.getElementById('marquee-section');
+  const finalSection = document.getElementById('final-section');
+
+  const sceneDesc = document.getElementById('scene-desc');
+  const finalImg = document.getElementById('final-img');
+  const text1 = document.getElementById('text1');
+  const text2 = document.getElementById('text2');
+
+  let playerName = "";
+
+  // Add your blocked names here (case-insensitive)
+  const blockedNames = ["piyo", "fuck", "fuck you", "bitch"];
+
+  function resetMarquee() {
+    sceneDesc.style.opacity = 0;
+  }
+  function resetFinal() {
+    finalImg.style.opacity = 0;
+    text1.style.opacity = 0;
+    text2.style.opacity = 0;
+  }
+
+  door.addEventListener('click', () => {
+    const name = nameInput.value.trim();
+    if (!name) {
+      alert('Please enter your name first');
+      return;
+    }
+
+    // Check for blocked names
+    if (blockedNames.includes(name.toLowerCase())) {
+      alert(`Sorry, the name "${name}" is not allowed`);
+      nameInput.value = "";
+      return;
+    }
+
+    playerName = name;
+    username.textContent = playerName;
+
+    doorSection.classList.remove('active');
+    resetMarquee();
+    resetFinal();
+
+    // Step 1: Show marquee
+    setTimeout(() => {
+      marqueeSection.classList.add('active');
+
+      // Scene description appears
+      setTimeout(() => {
+        sceneDesc.style.opacity = 1;
+
+        // Move to final section
+        setTimeout(() => {
+          marqueeSection.classList.remove('active');
+          setTimeout(() => {
+            finalSection.classList.add('active');
+
+            // Step-by-step reveal
+            setTimeout(() => {
+              finalImg.style.opacity = 1;
+              setTimeout(() => {
+                text1.style.opacity = 1;
+                setTimeout(() => {
+                  text2.style.opacity = 1;
+
+                  // Return to door after delay
+                  setTimeout(() => {
+                    finalSection.classList.remove('active');
+                    setTimeout(() => {
+                      doorSection.classList.add('active');
+                    }, 1000);
+                  }, 4000);
+                }, 1000);
+              }, 1000);
+            }, 1000);
+          }, 1000);
+        }, 4000);
+      }, 1000);
+    }, 1000);
+  });
+</script>
+</body>
+</html>
