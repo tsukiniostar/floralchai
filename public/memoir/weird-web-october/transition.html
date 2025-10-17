@@ -106,6 +106,7 @@
     opacity: 0;
     width: auto;
     transition: opacity 1s ease;
+    height: 160px;
   }
 
   .final-text {
@@ -143,14 +144,14 @@
     <div class="marquee">
       <img class="walk" src="../../assets/graphics/putiko3.gif" alt="">
     </div>
-    <div id="scene-desc">You're picking flowers for Piyo... clouds passing by in a rush</div>
+    <div id="scene-desc">You're picking flowers for Piyo as clouds passing by in a rush</div>
   </section>
 
   <!-- Final Section -->
   <section id="final-section" class="section">
     <img id="final-img" src="../../assets/graphics/chick-flower.gif" alt="Final Image">
     <div id="text1" class="final-text">Thank you <span id="username"></span></div>
-    <div id="text2" class="final-text">Piyo is really grateful for your help!</div>
+    <div id="text2" class="final-text">Piyo's really grateful for your help!</div>
   </section>
 
 <script>
@@ -171,6 +172,30 @@
 
   // Add your blocked names here (case-insensitive)
   const blockedNames = ["piyo", "fuck", "fuck you", "bitch"];
+
+  // Random scenes (each has a description + final image)
+  const scenes = [
+    {
+      desc: "You're harvesting apples for Piyo as the sun is about to set",
+      img: "../../assets/graphics/chick-apple.gif"
+    },
+    {
+      desc: "You're helping Piyo with his dance moves, he's starting to get a gist of it",
+      img: "../../assets/graphics/chick-dance.gif"
+    },
+    {
+      desc: "You're finding Piyo's favourite hat as it's getting windy",
+      img: "../../assets/graphics/chick-hat.gif"
+    },
+    {
+      desc: "You're wrapping gifts with Piyo as the celebration is coming soon",
+      img: "../../assets/graphics/chick-gift.gif"
+    },
+    {
+      desc: "You're assisting Piyo with taking photos as the scenery of the forest is getting dimmed",
+      img: "../../assets/graphics/chick-photo.gif"
+    }
+  ];
 
   function resetMarquee() {
     sceneDesc.style.opacity = 0;
@@ -197,6 +222,15 @@
 
     playerName = name;
     username.textContent = playerName;
+
+    // Pick random scene
+    const randomScene = scenes[Math.floor(Math.random() * scenes.length)];
+    sceneDesc.textContent = randomScene.desc;
+    finalImg.src = randomScene.img;
+
+    doorSection.classList.remove('active');
+    resetMarquee();
+    resetFinal();
 
     doorSection.classList.remove('active');
     resetMarquee();
@@ -230,12 +264,12 @@
                     setTimeout(() => {
                       doorSection.classList.add('active');
                     }, 1000);
-                  }, 4000);
+                  }, 6000);
                 }, 1000);
               }, 1000);
             }, 1000);
           }, 1000);
-        }, 4000);
+        }, 6000);
       }, 1000);
     }, 1000);
   });
