@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "Nunito";
+    src: url("../../assets/fonts/Nunito.ttf") format('truetype');
+}
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+::-webkit-scrollbar-track {
+    background-color: #ccc;
+    border: 5px solid white;
+}
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    border: 5px solid white;
+}
+.wwo-navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px dotted cornflowerblue;
+    background-color: #FCD639;
+    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    color: black !important;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.wwo-navigation a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 0 15px;
+}
+.wwo-navigation a:hover {
+    font-style: italic;
+}
+@media only screen and (max-width: 740px) {
+    .wwo-navigation {
+        font-size: 80%;
+    }    
+}
+@media only screen and (max-width: 480px) {
+    .wwo-navigation {
+        font-size: 60%;
+    }
+}

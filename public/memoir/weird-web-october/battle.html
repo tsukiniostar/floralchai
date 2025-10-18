@@ -6,6 +6,7 @@
   <link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://floralchai.neocities.org/memoir/weird-web-october/battle.html">
   <link rel="octo:octothorpes" href="weirdweboctober">
   <link rel="octo:octothorpes" href="Battle">
+  <link rel="stylesheet" href="./nav.css">
   <title>Battle</title>
   <style>
     body {
@@ -13,13 +14,14 @@
       padding: 0;
       background: oldlace;
       font-family: Arial, sans-serif;
+    }
+    .main {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      max-height: 100vh;
     }
-
     nav {
       text-align: center;
       margin-bottom: 20px;
@@ -104,6 +106,12 @@
   </style>
 </head>
 <body>
+  <nav class="wwo-navigation">
+    <a href="./camera.html">← Camera</a>
+    <span><a href="https://weirdweboctober.website/">Weird Web October</a> ♡ <a href="../../index.html">Back to floralchai</a></span>
+    <a href="./upside-down.html">Upside-down →</a>
+  </nav>
+  <main class="main">
   <nav>
     <a href="#usagi" id="link-usagi">Usagi</a>
     <a href="#momoga" id="link-momoga">Momoga</a>
@@ -124,7 +132,8 @@
     </div>
     <div class="label">Momoga</div>
   </div>
-
+  </main>
+  
   <script>
     let currentPunchAudio = null;
     let currentFollowAudio = null;

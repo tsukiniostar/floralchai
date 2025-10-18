@@ -6,6 +6,7 @@
     <link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://floralchai.neocities.org/memoir/weird-web-october/camera.html">
     <link rel="octo:octothorpes" href="weirdweboctober">
     <link rel="octo:octothorpes" href="Camera">
+    <link rel="stylesheet" href="./nav.css">
     <title>Camera</title>
     <style>
         html, body {
@@ -19,11 +20,7 @@
         * {
             box-sizing: border-box;
         }
-
-        html {
-            font-size: 130%;
-        }
-
+        
         body {
             background-attachment: fixed;
             color: var(--color-brown);
@@ -156,6 +153,11 @@ img {
 </style>
 </head>
 <body>
+  <nav class="wwo-navigation">
+    <a href="./containers.html">← Containers</a>
+    <span><a href="https://weirdweboctober.website/">Weird Web October</a> ♡ <a href="../../index.html">Back to floralchai</a></span>
+    <a href="./battle.html">Battle →</a>
+  </nav>
     <div class="base-sidebg"></div>
 <div class="camera-frame">
   <div class="screen">
@@ -169,8 +171,6 @@ img {
   <button id="nextBtn">Next →</button>
 </div>
 <img class="pte" src="../../assets/graphics/pte-polaroid.png">
-<img class="jokebear" src="../../assets/graphics/jokebear-polaroid.jpg">
-<a class="back" href="./index.html">Back?</a>
 <script>
 const images = [
   "../../assets/media/kevinbusinesscard.jpg",

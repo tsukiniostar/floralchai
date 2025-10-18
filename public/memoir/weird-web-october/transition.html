@@ -7,6 +7,7 @@
 <link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://floralchai.neocities.org/memoir/weird-web-october/transition.html">
 <link rel="octo:octothorpes" href="weirdweboctober">
 <link rel="octo:octothorpes" href="Transition">
+<link rel="stylesheet" href="./nav.css">
 <title>Transition</title>
 <style>
     @font-face {
@@ -18,18 +19,20 @@
     margin: 0;
     overflow: hidden;
     font-family: "Inter", Arial, Helvetica, sans-serif;
+    color: var(--color-white) !important; /* Set the fill color of the text */
+    text-align: center;
+    image-rendering: pixelated;
+    font-size: 16px;
+  }
+  h2 {
+    font-family: "EmilysCandy", Arial, Helvetica, sans-serif;
     text-shadow:     
     -1px -1px 0 var(--color-brown), /* Top-left shadow */
      1px -1px 0 var(--color-brown), /* Top-right shadow */
     -1px  1px 0 var(--color-brown), /* Bottom-left shadow */
      1px  1px 0 var(--color-brown); /* Bottom-right shadow */;
-    color: var(--color-white); /* Set the fill color of the text */
-    font-weight: bold; /* Make the text bold */
-    text-align: center;
-    image-rendering: pixelated;
-  }
-  h2 {
-    font-family: "EmilysCandy", Arial, Helvetica, sans-serif;
+     font-weight: bold;
+     font-size: 1.75rem;
   }
   /* --- Section base --- */
   .section {
@@ -53,6 +56,7 @@
   /* --- Door section --- */
   #door-section {
     background: white;
+    height: auto;
   }
 
   #door {
@@ -93,6 +97,13 @@
     border-radius: 5px;
     border: 2px solid var(--color-brown);
     transform: rotate(-4deg);
+    text-shadow:     
+    -1px -1px 0 var(--color-brown), /* Top-left shadow */
+     1px -1px 0 var(--color-brown), /* Top-right shadow */
+    -1px  1px 0 var(--color-brown), /* Bottom-left shadow */
+     1px  1px 0 var(--color-brown); /* Bottom-right shadow */;
+    font-weight: bold;
+    font-size: 1.25rem;
   }
   /* --- Final section --- */
   #final-section {
@@ -127,9 +138,13 @@
 </style>
 </head>
 <body>
-
   <!-- Door Section -->
   <section id="door-section" class="section active">
+  <nav class="wwo-navigation">
+    <a href="./unicode.html">← Unicode</a>
+    <span><a href="https://weirdweboctober.website/">Weird Web October</a> ♡ <a href="../../index.html">Back to floralchai</a></span>
+    <a href="./upside-down.html">		</a>
+  </nav>
     <h2>
         A new adventure awaits 
         <br><a target="_blank" href="https://moko.pupu.jp/"><img src="../../assets/graphics/piyos-angel.gif"></a>

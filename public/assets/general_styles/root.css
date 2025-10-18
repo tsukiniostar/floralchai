@@ -23,8 +23,6 @@
 html, body {
   height: 100%;
   margin: 0;
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-black) var(--color-white);
   scroll-behavior: smooth;
 }
 * {

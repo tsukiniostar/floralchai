@@ -6,6 +6,7 @@
   <link rel="preload" as="fetch" href="https://octothorp.es/?uri=https://floralchai.neocities.org/memoir/weird-web-october/containers.html">
   <link rel="octo:octothorpes" href="weirdweboctober">
   <link rel="octo:octothorpes" href="Containers">
+  <link rel="stylesheet" href="./nav.css">
   <title>Containers</title>
   <style>
     :root {
@@ -14,16 +15,17 @@
     }
 body {
   background: #e7edf2;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin: 0;
+}
+.main {
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  text-align: center;
+  min-height: 90vh;
 }
-
 .scene {
   position: relative;
   width: 90%;
@@ -222,6 +224,12 @@ body {
   </style>
 </head>
 <body>
+  <nav class="wwo-navigation">
+    <a href="#">		</a>
+    <span><a href="https://weirdweboctober.website/">Weird Web October</a> ♡ <a href="../../index.html">Back to floralchai</a></span>
+    <a href="./camera.html">Camera →</a>
+  </nav>
+  <main class="main">
   <h1 id="tunaaaa" title="Click to replay" aria-live="polite"></h1>
   <div class="stage">
     <div class="hud">Click on the can to open/close it. </div>
@@ -243,6 +251,7 @@ body {
       </div>
     </div>
   </div>
+  </main>
   <!-- Sounds -->
   <audio id="meowSound" src="https://file.garden/ZTeNOnlIhS-zrdb1/audio/meow.mp3" preload="auto"></audio>
   <audio id="canOpenSound" src="https://file.garden/ZTeNOnlIhS-zrdb1/audio/open-can.mp3" preload="auto"></audio>
